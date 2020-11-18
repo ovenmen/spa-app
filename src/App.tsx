@@ -4,22 +4,25 @@ import {
     Switch,
     Route
 } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
 
-import { Counter } from './components/counter';
-import { PageNotFound } from './components/pageNotFound';
+import { Home } from './pages/home';
+import { NotFound } from './pages/notFound';
 import { Navigation } from './components/navigation';
 
 const App: FC = () => (
     <Router>
-        <Navigation />
-        <Switch>
-            <Route exact path="/">
-                <Counter />
-            </Route>
-            <Route path="*">
-                <PageNotFound />
-            </Route>
-        </Switch>
+        <Container>
+            <Navigation />
+            <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route path="*">
+                    <NotFound />
+                </Route>
+            </Switch>
+        </Container>
     </Router>
 );
 

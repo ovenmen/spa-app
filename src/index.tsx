@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 
 import store from './__data__/store';
+import 'semantic-ui-css/semantic.min.css';
 
 const render = () => {
     const App = require('./App').default;

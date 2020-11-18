@@ -1,9 +1,9 @@
 import React, { FC, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { increment, decrement } from '../../__data__/actions';
+import { increment, decrement } from '../../__data__/actions/counter';
 
-import { State } from './types';
+import { State } from '../../__data__/types';
 
 export const Counter: FC = () => {
     const counterValue = useSelector((state: State) => state.counter.value);

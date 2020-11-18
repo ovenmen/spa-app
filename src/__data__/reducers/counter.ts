@@ -1,7 +1,4 @@
-import {
-    INCREMENT,
-    DECREMENT
-} from './actionsTypes';
+import { INCREMENT, DECREMENT } from '../actionsTypes';
 
 type Action = {
     type: string,
