@@ -1,7 +1,7 @@
 import React, { FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Menu, Input } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
 import { State } from '../../__data__/types';
 import { changeCurrentPage } from '../../__data__/actions/page';
@@ -16,7 +16,7 @@ export const Navigation: FC = () => {
     }, [dispatch]);
     
     return (
-        <Menu secondary>
+        <Menu secondary pointing size="large">
             <Menu.Item
                 as={Link}
                 to="/"
@@ -33,9 +33,26 @@ export const Navigation: FC = () => {
             >
                 О сервисе
             </Menu.Item>
-            <Menu.Item>
-                <Input icon='search' placeholder='Search mail...' />
-            </Menu.Item>
+            <Menu.Menu position='right'>
+                <Menu.Item>
+                    <Menu.Item
+                        as={Link}
+                        to="/signin"
+                        active={currentPageName === 'Войти'}
+                        onClick={handleClick}
+                    >
+                        Войти
+                    </Menu.Item>
+                    <Menu.Item
+                        as={Link}
+                        to="/register"
+                        active={currentPageName === 'Зарегистрироваться'}
+                        onClick={handleClick}
+                    >
+                        Зарегистрироваться
+                    </Menu.Item>
+                </Menu.Item>
+            </Menu.Menu>
         </Menu>
     );
 };
